@@ -114,29 +114,29 @@ Template:
 ```Text
 sub-<label>/[ses-<label>/]
     anat/
-        sub-<label>[_ses-<label>][_acq-<label>][_ce-<label>][_rec-<label>][_run-<index>]_<modality_label>.nii[.gz]
+        sub-<label>[_ses-<label>][_acq-<label>][_ce-<label>][_rec-<label>][_run-<index>]_<suffix>.nii[.gz]
         sub-<label>[_ses-<label>][_acq-<label>][_ce-<label>][_rec-<label>][_run-<index>][_mod-<label>]_defacemask.nii[.gz]
 ```
 
 Anatomical (structural) data acquired for that participant. Currently supported
-modalities include:
+suffixes include:
 
-| Name               | `modality_label` | Description                                                                                                                                       |
+| Modality Name      | Suffix    | Description                                                                                                                                       |
 | ---------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| T1 weighted        | T1w              |                                                                                                                                                   |
-| T2 weighted        | T2w              |                                                                                                                                                   |
-| T1 Rho map         | T1rho            | Quantitative T1rho brain imaging <br> <https://www.ncbi.nlm.nih.gov/pubmed/24474423> <br> <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4346383/> |
-| T1 map             | T1map            | quantitative T1 map                                                                                                                               |
-| T2 map             | T2map            | quantitative T2 map                                                                                                                               |
-| T2\*               | T2star           | High resolution T2\* image                                                                                                                        |
-| FLAIR              | FLAIR            |                                                                                                                                                   |
-| FLASH              | FLASH            |                                                                                                                                                   |
-| Proton density     | PD               |                                                                                                                                                   |
-| Proton density map | PDmap            |                                                                                                                                                   |
-| Combined PD/T2     | PDT2             |                                                                                                                                                   |
-| Inplane T1         | inplaneT1        | T1-weighted anatomical image matched to functional acquisition                                                                                    |
-| Inplane T2         | inplaneT2        | T2-weighted anatomical image matched to functional acquisition                                                                                    |
-| Angiography        | angio            |                                                                                                                                                   |
+| T1 weighted        | T1w       |                                                                                                                                                   |
+| T2 weighted        | T2w       |                                                                                                                                                   |
+| T1 Rho map         | T1rho     | Quantitative T1rho brain imaging <br> <https://www.ncbi.nlm.nih.gov/pubmed/24474423> <br> <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4346383/> |
+| T1 map             | T1map     | quantitative T1 map                                                                                                                               |
+| T2 map             | T2map     | quantitative T2 map                                                                                                                               |
+| T2\*               | T2star    | High resolution T2\* image                                                                                                                        |
+| FLAIR              | FLAIR     |                                                                                                                                                   |
+| FLASH              | FLASH     |                                                                                                                                                   |
+| Proton density     | PD        |                                                                                                                                                   |
+| Proton density map | PDmap     |                                                                                                                                                   |
+| Combined PD/T2     | PDT2      |                                                                                                                                                   |
+| Inplane T1         | inplaneT1 | T1-weighted anatomical image matched to functional acquisition                                                                                    |
+| Inplane T2         | inplaneT2 | T2-weighted anatomical image matched to functional acquisition                                                                                    |
+| Angiography        | angio     |                                                                                                                                                   |
 
 If the structural images included in the dataset were defaced (to protect
 identity of participants) one MAY provide the binary mask that was used to
@@ -191,22 +191,22 @@ different reconstruction algorithms (for example ones using motion correction).
 
 ### Task (including resting state) imaging data
 
-Currently supported image contrasts include:
-
-| Name  | `contrast_label` | Description                                                                                          |
-|--------------------------------------------------------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------|
-| BOLD  | bold             | Blood-Oxygen-Level Dependent contrast (specialized T2\* weighting)                                   |
-| CBV   | cbv              | Cerebral Blood Volume contrast (specialized T2\* weighting or difference between T1 weighted images) |
-| Phase | phase            | Phase information associated with magnitude information stored in BOLD contrast                      |
-
 Template:
 
 ```Text
 sub-<label>/[ses-<label>/]
     func/
-        sub-<label>[_ses-<label>]_task-<label>[_acq-<label>][_ce-<label>][_dir-<label>][_rec-<label>][_run-<index>][_echo-<index>]_<contrast_label>.nii[.gz]
+        sub-<label>[_ses-<label>]_task-<label>[_acq-<label>][_ce-<label>][_dir-<label>][_rec-<label>][_run-<index>][_echo-<index>]_<suffix>.nii[.gz]
         sub-<label>[_ses-<label>]_task-<label>[_acq-<label>][_ce-<label>][_dir-<label>][_rec-<label>][_run-<index>][_echo-<index>]_sbref.nii[.gz]
 ```
+
+Currently supported image contrasts include:
+
+| Modality Name | Suffix | Description                                                                                          |
+|--------------------------------------------------------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------|
+| BOLD          | bold   | Blood-Oxygen-Level Dependent contrast (specialized T2\* weighting)                                   |
+| CBV           | cbv    | Cerebral Blood Volume contrast (specialized T2\* weighting or difference between T1 weighted images) |
+| Phase         | phase  | Phase information associated with magnitude information stored in BOLD contrast                      |
 
 Imaging data acquired during functional imaging (i.e. imaging which supports
 rapid temporal repetition). This includes but is not limited to task based fMRI
