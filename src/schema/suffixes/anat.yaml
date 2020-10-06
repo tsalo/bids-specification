@@ -1,0 +1,33 @@
+---
+# Suffix-level rules, grouped by data type
+- T1w:
+    Units:
+      - arbitrary
+- T2w:
+    Units:
+      - arbitrary
+- T1rho
+- T1map:
+    Units:
+      - sec
+- T2map:
+    Units:
+      - sec
+- T2star:
+    Units:
+      - arbitrary
+      - sec
+- T2starw:
+    Units:
+      - arbitrary
+- T2starmap:
+    Units:
+      - sec
+- FLAIR
+- FLASH
+- PD
+- PDmap
+- PDT2
+- inplaneT1
+- inplaneT2
+- angio

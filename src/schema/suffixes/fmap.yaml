@@ -1,0 +1,28 @@
+---
+# Suffix-level rules, grouped by data type
+- phase1:
+    Units:
+      - rad
+      - arbitrary
+- phase2:
+    Units:
+      - rad
+      - arbitrary
+- magnitude1:
+    Units:
+      - arbitrary
+- magnitude2:
+    Units:
+      - arbitrary
+- magnitude:
+    Units:
+      - arbitrary
+- phasediff
+- fieldmap:
+    Units:
+      - Hz
+      - rad/s
+      - Tesla
+- epi:
+    Units:
+      - arbitrary

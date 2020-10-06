@@ -1,12 +1,41 @@
 ---
 # First group
 - suffixes:
-    - phasediff
     - phase1
     - phase2
+    - magnitude
     - magnitude1
     - magnitude2
-    - magnitude
+  extensions:
+    - .nii.gz
+    - .nii
+    - .json
+  entities:
+    subject: required
+    session: optional
+    acquisition: optional
+    run: optional
+  metadata:
+    @metadata-mri
+    IntendedFor: recommended
+- suffixes:
+    - phasediff
+  extensions:
+    - .nii.gz
+    - .nii
+    - .json
+  entities:
+    subject: required
+    session: optional
+    acquisition: optional
+    run: optional
+  metadata:
+    @metadata-mri
+    IntendedFor: recommended
+    EchoTime1: required
+    EchoTime2: required
+    EchoTime: prohibited
+- suffixes:
     - fieldmap
   extensions:
     - .nii.gz
@@ -17,6 +46,10 @@
     session: optional
     acquisition: optional
     run: optional
+  metadata:
+    @metadata-mri
+    IntendedFor: recommended
+    Units: required
 # Second group
 - suffixes:
     - epi
@@ -31,3 +64,6 @@
     ceagent: optional
     direction: required
     run: optional
+  metadata:
+    @metadata-mri
+    IntendedFor: recommended

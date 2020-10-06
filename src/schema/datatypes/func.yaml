@@ -19,6 +19,20 @@
     direction: optional
     run: optional
     echo: optional
+  metadata:
+    @metadata-mri
+    RepetitionTime: required
+    VolumeTiming: required
+    TaskName: required
+    NumberOfVolumesDiscardedByScanner: recommended
+    NumberOfVolumesDiscardedByUser: recommended
+    DelayTime: recommended
+    AcquisitionDuration: recommended
+    DelayAfterTrigger: recommended
+    Instructions: recommended
+    TaskDescription: recommended
+    CogAtlasID: recommended
+    CogPOID: recommended
 # Second group
 - suffixes:
     - events
