@@ -1,38 +1,73 @@
 ---
 # First group
 - suffixes:
-    - bold
-    - cbv
-    - phase
-    - sbref
+    - optional: bold
+    - optional: cbv
+    - optional: phase
+    - optional: sbref
   extensions:
-    - .nii.gz
-    - .nii
-    - .json
+    - required:
+        oneOf:
+          - .nii.gz
+          - .nii
+    - optional:
+        - .json
   entities:
-    subject: required
-    session: optional
-    task: required
-    acquisition: optional
-    ceagent: optional
-    reconstruction: optional
-    direction: optional
-    run: optional
-    echo: optional
+    - required:
+        - subject
+        - task
+    - optional:
+        - session
+        - task
+        - acquisition
+        - ceagent
+        - reconstruction
+        - direction
+        - run
+        - echo
   metadata:
     @metadata-mri
-    RepetitionTime: required
-    VolumeTiming: required
-    TaskName: required
-    NumberOfVolumesDiscardedByScanner: recommended
-    NumberOfVolumesDiscardedByUser: recommended
-    DelayTime: recommended
-    AcquisitionDuration: recommended
-    DelayAfterTrigger: recommended
-    Instructions: recommended
-    TaskDescription: recommended
-    CogAtlasID: recommended
-    CogPOID: recommended
+    - required:
+      # Only certain combinations of the following timing parameters are allowed.
+      - oneOf:
+          - required: RepetitionTime
+            allOf:
+              - not:
+                  required: AcquisitionDuration
+              - not:
+                  required: VolumeTiming
+          - allOf:
+              - required: SliceTiming
+              - required: VolumeTiming
+            allOf:
+              - not:
+                  required: RepetitionTime
+              - not:
+                  required: DelayTime
+          - allOf:
+              - required: AcquisitionDuration
+              - required: VolumeTiming
+            allOf:
+              - not:
+                  required: RepetitionTime
+              - not:
+                  required: DelayTime
+          - allOf:
+              - required: RepetitionTime
+              - required: DelayTime
+            allOf:
+              - not:
+                  required: AcquisitionDuration
+              - not:
+                  required: VolumeTiming
+    - required: TaskName
+    - recommended: NumberOfVolumesDiscardedByScanner
+    - recommended: NumberOfVolumesDiscardedByUser
+    - recommended: DelayAfterTrigger
+    - recommended: Instructions
+    - recommended: TaskDescription
+    - recommended: CogAtlasID
+    - recommended: CogPOID
 # Second group
 - suffixes:
     - events
