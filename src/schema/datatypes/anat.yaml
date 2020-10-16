@@ -26,6 +26,9 @@
     acquisition: optional
     ceagent: optional
     reconstruction: optional
+  metadata:
+    @metadata-mri
+    ContrastBolusIngredient: optional
 # Second group
 - suffixes:
     - defacemask
@@ -41,3 +44,6 @@
     ceagent: optional
     reconstruction: optional
     modality: optional
+  metadata:
+    @instruments-mri-metadata
+    ContrastBolusIngredient: optional

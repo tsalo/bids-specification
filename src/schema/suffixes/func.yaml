@@ -1,0 +1,15 @@
+---
+# Suffix-level rules, grouped by data type
+- bold:
+    Units:
+      - arbitrary
+- phase:
+    Units:
+      - rad
+      - arbitrary
+- cbv:
+    Units:
+      - arbitrary
+- sbref:
+    Units:
+      - arbitrary

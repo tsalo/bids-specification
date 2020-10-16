@@ -21,6 +21,9 @@
 - direction:
     entity: dir
     format: label
+    metadata:
+      - PhaseEncodingDirection:
+          requirement: required
 - run:
     entity: run
     format: index
@@ -30,6 +33,9 @@
 - echo:
     entity: echo
     format: index
+    metadata:
+      - EchoTime:
+          requirement: required
 - recording:
     entity: recording
     format: label
