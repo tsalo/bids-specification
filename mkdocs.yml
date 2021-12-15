@@ -9,10 +9,15 @@ theme:
       - navigation.sections
 extra_javascript:
     - js/jquery-3.6.0.min.js
+extra_css:
+    - css/tooltips.css
 markdown_extensions:
     - toc:
         anchorlink: true
     - pymdownx.superfences
+    - mdtooltipslink:
+        glossary_path: src/99-appendices/14-glossary.md
+        css_path: src/css/toolstips.css
 plugins:
     - search
     - branchcustomization:

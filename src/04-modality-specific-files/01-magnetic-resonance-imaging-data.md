@@ -163,7 +163,7 @@ diffusion and functional MRI may also be *intended for* estimating the
 such as gradient-recalled echo (GRE) sequences that are stored under the
 `fmap/` folder of the BIDS structure.
 
-The modality labels `dwi` (under `dwi/`), `bold` (under `func/`),
+The modality labels @(dwi.datatypes) [dwi.datatypes](/99-appendices/14-glossary.html#dwi.datatypes) (under `dwi/`), `bold` (under `func/`),
 `asl` (under `perf/`), `sbref` (under `dwi/`, `func/` or `perf/`), and
 any modality under `fmap/` are allowed to encode the MR protocol intent for
 fieldmap estimation using the following metadata:
