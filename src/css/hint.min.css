@@ -49,7 +49,7 @@
 	font-size: 12px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: 12px;
-	white-space: nowrap;
+    white-space: pre-wrap;
 	text-shadow: 0 -1px 0 #000;
 	box-shadow: 4px 4px 8px rgba(0, 0, 0, .3)
 }
