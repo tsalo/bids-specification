@@ -1,5 +1,9 @@
 # The Brain Imaging Data Structure
 
+[tooltips]{Hello!}
+
+{{MACROS___make_tooltip("tooltips", "Hello!")}}
+
 This resource defines the Brain Imaging Data Structure (BIDS) specification, including the core specification as well as many modality-specific extensions.
 
 To get started, [check out the introduction](01-introduction.md). If you'd like

@@ -172,3 +172,7 @@ def make_filetree_example(filetree_info, use_pipe=True):
     """
     tree = example.DirectoryTree(filetree_info, use_pipe)
     return tree.generate()
+
+
+def make_tooltip(string, glossary_term):
+    return f"[{string}]{{{tip}}}"

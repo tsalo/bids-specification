@@ -9,6 +9,8 @@ theme:
       - navigation.sections
 extra_javascript:
     - js/jquery-3.6.0.min.js
+extra_css:
+    - css/hint.min.css
 markdown_extensions:
     - toc:
         anchorlink: true
@@ -22,6 +24,7 @@ plugins:
              - css/watermark.css
     - macros:
         module_name: tools/mkdocs_macros_bids/main
+    - tooltips
 docs_dir: 'src'
 use_directory_urls: false
 nav:
