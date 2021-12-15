@@ -174,5 +174,10 @@ def make_filetree_example(filetree_info, use_pipe=True):
     return tree.generate()
 
 
-def make_tooltip(string, glossary_term):
+def make_tooltip(string, term, group):
+    schemapath = utils.get_schema_path()
+    schema_obj = schema.load_schema(schemapath)
+    group_schema = schema_obj["objects"][group]
+    term_definition = group_schema[term]
+    tip = term_definition["description"]
     return f"[{string}]{{{tip}}}"

@@ -2,7 +2,9 @@
 
 [tooltips]{Hello!}
 
-{{MACROS___make_tooltip("tooltips", "Hello!")}}
+[tooltips]{If files belonging to an entity-linked file collection are acquired at different echo times, the `_echo-<index>` key/value pair MUST be used to distinguish individual files. This entity represents the `EchoTime` metadata field. Please note that the `<index>` denotes the number/index (in the form of a nonnegative integer), not the `EchoTime` value which needs to be stored in the field `EchoTime` of the separate JSON file.}
+
+{{MACROS___make_tooltip("tooltips", "echo", "entities")}}
 
 This resource defines the Brain Imaging Data Structure (BIDS) specification, including the core specification as well as many modality-specific extensions.
 
