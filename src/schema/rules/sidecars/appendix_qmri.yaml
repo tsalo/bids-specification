@@ -1,0 +1,152 @@
+#
+# Groups of related metadata fields
+#
+# Assumptions: never need disjunction of selectors
+# Assumptions: top-to-bottom overrides is sufficient logic
+
+
+---
+# Appendix XI: Quantitative MRI
+# NOTE: This file does not cover the sections:
+# - Deriving the intended qMRI application from an ambiguous file collection
+# - Application-specific notes for qMRI file collections
+
+# Metadata requirements for qMRI data
+
+# Method-specific priority levels for qMRI file collections
+
+# Anatomy imaging data
+qMRIAnatVFA:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix == "VFA"
+    fields:
+        FlipAngle: REQUIRED
+        PulseSequenceType: REQUIRED
+        RepetitionTimeExcitation: REQUIRED
+        SpoilingRFPhaseIncrement: OPTIONAL
+
+qMRIAnatIRT1:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix == "IRT1"
+    fields:
+        InversionTime: REQUIRED
+
+qMRIAnatMP2RAGE:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix == "MP2RAGE"
+    fields:
+        FlipAngle: REQUIRED
+        InversionTime: REQUIRED
+        RepetitionTimeExcitation: REQUIRED
+        RepetitionTimePreperation: REQUIRED
+        NumberShots: REQUIRED
+        MagneticFieldStrength: REQUIRED
+        EchoTime: OPTIONAL
+
+qMRIAnatMESE:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix == "MESE"
+    fields:
+        EchoTime: REQUIRED
+
+qMRIAnatMEGRE:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix == "MEGRE"
+    fields:
+        EchoTime: REQUIRED
+
+qMRIAnatMTR:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix == "MTR"
+    fields:
+        MTState: REQUIRED
+
+qMRIAnatMTS:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix == "MTS"
+    fields:
+        FlipAngle: REQUIRED
+        MTState: REQUIRED
+        RepetitionTimeExcitation: REQUIRED
+        EchoTime: OPTIONAL
+
+qMRIAnatMPM:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix == "MPM"
+    fields:
+        FlipAngle: REQUIRED
+        MTState: REQUIRED
+        RepetitionTimeExcitation: REQUIRED
+
+# Field maps
+# NOTE: Several suffixes in this table do not have any required metadata
+qMRIFieldmapTB1DAM:
+    selectors:
+    - modality == "MRI"
+    - datatype == "fmap"
+    - suffix == "TB1DAM"
+    fields:
+        FlipAngle: REQUIRED
+
+qMRIFieldmapTB1EPI:
+    selectors:
+    - modality == "MRI"
+    - datatype == "fmap"
+    - suffix == "TB1EPI"
+    fields:
+        EchoTime: REQUIRED
+        FlipAngle: REQUIRED
+        TotalReadoutTime: REQUIRED
+        MixingTime: REQUIRED
+
+qMRIFieldmapTB1AFI:
+    selectors:
+    - modality == "MRI"
+    - datatype == "fmap"
+    - suffix == "TB1AFI"
+    fields:
+        RepetitionTime: REQUIRED
+
+qMRIFieldmapTB1SRGE:
+    selectors:
+    - modality == "MRI"
+    - datatype == "fmap"
+    - suffix == "TB1SRGE"
+    fields:
+        FlipAngle: REQUIRED
+        InversionTime: REQUIRED
+        RepetitionTimeExcitation: REQUIRED
+        RepetitionTimePreperation: REQUIRED
+        NumberShots: REQUIRED
+
+# Metadata requirements for qMRI maps
+# These count as derived data
+qMRIQuantitativeMaps:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - |
+        suffix in
+        ["T1map", "T2map", "T2starmap", "R1map", "R2map", "R2starmap", "PDmap", "MTRmap",
+        "MTsat", "UNIT1", "T1rho", "MWFmap", "MTVmap", "PDT2map", "Chimap", "S0map", "M0map"]
+    fields:
+        BasedOn: RECOMMENDED
+        EstimationReference: RECOMMENDED
+        EstimationAlgorithm: RECOMMENDED
+        Units: RECOMMENDED
