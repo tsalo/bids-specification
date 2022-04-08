@@ -33,6 +33,9 @@ MRIASLTextOnlySliceTiming:
     fields:
         SliceTiming: REQUIRED
 
+# NOTE: Per the ASL appendix, if sidecar.MRAcquisitionType == "3D",
+# SliceTiming is PROHIBITED
+
 MRIASLTextOnlyFlipAngle:
     selectors:
     - modality == "MRI"
@@ -91,6 +94,7 @@ MRIASLCommonMetadataFieldsBackgroundSuppression:
     - sidecar.BackgroundSuppression == true
     fields:
         BackgroundSuppressionNumberPulses: RECOMMENDED
+        # NOTE: The ASL appendix says this is REQUIRED in this case
         BackgroundSuppressionPulseTime: RECOMMENDED
 
 MRIASLCommonMetadataFieldsVascularCrushing:
@@ -162,6 +166,9 @@ MRIASLPASLSpecificBolusCutOffFlag:
     fields:
         BolusCutOffDelayTime: REQUIRED
         BolusCutOffTechnique: REQUIRED
+
+# NOTE: Per the ASL appendix, if sidecar.BolusCutOffFlag == false,
+# then BolusCutOffDelayTime and BolusCutOffTechnique are PROHIBITED
 
 # m0scan metadata fields
 MRIASLM0ScanTextOnly:
