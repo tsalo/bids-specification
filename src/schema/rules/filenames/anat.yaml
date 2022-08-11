@@ -1,6 +1,7 @@
 ---
 MRIAnatomyNonparametric:
     selectors:
+    - dataset.dataset_description.DatasetType != "derivative"
     - modality == "MRI"
     - datatype == "anat"
     - suffix in:
@@ -28,3 +29,12 @@ MRIAnatomyNonparametric:
         ceagent: OPTIONAL
         reconstruction: OPTIONAL
         part: OPTIONAL
+
+MRIAnatomyNonparametric:
+    selectors:
+    - $ref: rules.filenames.anat.MRIAnatomyNonparametric
+    - dataset.dataset_description.DatasetType == "derivative"
+    entities:
+        $ref: rules.filenames.anat.MRIAnatomyNonparametric.entities
+        space: OPTIONAL
+        desc: OPTIONAL
