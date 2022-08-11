@@ -1,0 +1,30 @@
+---
+MRIAnatomyNonparametric:
+    selectors:
+    - modality == "MRI"
+    - datatype == "anat"
+    - suffix in:
+        - T1w
+        - T2w
+        - PDw
+        - T2starw
+        - FLAIR
+        - inplaneT1
+        - inplaneT2
+        - PDT2
+        - angio
+        - T2star  # deprecated
+        - FLASH  # deprecated
+        - PD  # deprecated
+    - extension in:
+        - .nii.gz
+        - .nii
+        - .json
+    entities:
+        subject: REQUIRED
+        session: OPTIONAL
+        run: OPTIONAL
+        acquisition: OPTIONAL
+        ceagent: OPTIONAL
+        reconstruction: OPTIONAL
+        part: OPTIONAL
