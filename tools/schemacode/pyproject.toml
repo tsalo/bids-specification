@@ -50,7 +50,7 @@ tests = [
   "check-jsonschema",
   "codecov",
   "coverage[toml]",
-  "pytest>6",
+  "pytest>=9.1.0",
   "pytest-cov",
 ]
 all = [
