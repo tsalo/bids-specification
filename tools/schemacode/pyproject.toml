@@ -43,7 +43,7 @@ render = [
   "tabulate",
   "pandas",
   "markdown-it-py",
-  "pymdown-extensions>=9.2",
+  "pymdown-extensions>=10.21.3",
 ]
 tests = [
   "bidsschematools[validation,render,expressions]",
